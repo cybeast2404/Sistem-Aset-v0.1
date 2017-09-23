@@ -1,5 +1,5 @@
 # Sistem-Aset
-'Sistem Aset ' is an asset management system that can handle your asset data or record. 
+'Sistem Aset ' is an Web-Based asset management system that can handle your asset data or record. 
 
 Tutorial for setup 
 1. Clone/Download this repo to your local machine
