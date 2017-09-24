@@ -28,74 +28,15 @@ Route::get('/', function () {
 });
 
 //dashboard
-Route::get('/dashboard',function(){
-
-        
-       // Session::put('idadmin', auth()->id());
-        //get id from users
-        // $idput = Session::put('idauth',auth()->id());
-
-
-
-         $assets 	= DB::table('assets')->count();
-         $items 	= DB::table('asset_items')->count();
-
-         //cost this month
-         $cost = DB::table('asset_items')
-         ->whereMonth('created_at',date('m'))
-         ->sum('asset_items.price');
-
-         //cost this year
-         $costyear = DB::table('asset_items')
-         ->whereYear('created_at',date('Y'))
-         ->sum('asset_items.price');
-
-         //l = list
-         $l_asset = assets::paginate(5);
-         $l_items = asset_items::paginate(5);
-
-
-
-	return view('dashboard',compact('users'))->with(array(
-
-          'assets'    =>$assets,
-          'items'     =>$items,
-          'costmonth' =>$cost,
-          'costyear'  =>$costyear,
-          'l_asset'   =>$l_asset,
-          'l_items'   =>$l_items,
-          //'id'        =>$id,
-
-  
-         
-          ));
-
-});
-
+Route::get('/dashboard','pages_controller@dashboard');
 //asset category
-Route::get('dashboard/asset-category-registration',function(){
-	return view('asset_category');
-});
-
+Route::get('dashboard/asset-category-registration','pages_controller@category_register');
 //asset registration 
-Route::get('dashboard/asset-registration',function(){
-
-	$query = DB::select('select * from category_assets');
-	return view('asset_new',['query'=>$query]);
-});
-
+Route::get('dashboard/asset-registration','pages_controller@asset_register');
 //asset item registration
-Route::get('dashboard/asset-item-registration',function(){
-	
-	$query = DB::select('select id,name from assets');
-	return view('asset_item',['query'=>$query]);
-});
-
+Route::get('dashboard/asset-item-registration','pages_controller@item_register');
 //admin registration
-Route::get('dashboard/admin-registration/',function(){
-	return view('admin_registration');
-});
-
+Route::get('dashboard/admin-registration','pages_controller@admin_register');
 //Username and password modification
 Route::get('dashboard/authentication','modification@index');
 
