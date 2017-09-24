@@ -19,11 +19,11 @@ Example syntax :
    
 5. Setup your database Connection in the ".env" file
    at line 8,9,10,11,12,13 which is
-   i.   DB_HOST  
-   ii.  DB_PORT
-   iii. DB_DATABASE
-   iv.  DB_USERNAME
-   v.   DB_PASSWORD
+   - DB_HOST  
+   - DB_PORT
+   - DB_DATABASE
+   - DB_USERNAME
+   - DB_PASSWORD
 
 Bug Fix
 --------
