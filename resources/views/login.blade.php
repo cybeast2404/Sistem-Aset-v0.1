@@ -33,7 +33,7 @@
       	
         <div class="panel panel-default" >
             <div class="panel-heading">
-                <div class="panel-title text-center">Sistem Aset v0.1 (In Development)</div>
+                <div class="panel-title text-center">Sistem Aset v0.2 Beta</div>
             </div>     
 
             <div class="panel-body" >
