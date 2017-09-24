@@ -33,7 +33,7 @@ Example syntax :
  6. Generate APP key using php artisan command 
  - Make sure your terminal/CMD/CLI on the file directory  
  
- - Syntax
+ Syntax :
  - php artisan key:generate
  
  7. Execute the migration command to import all the table structure on the database
