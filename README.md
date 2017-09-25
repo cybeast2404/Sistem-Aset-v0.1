@@ -1,5 +1,5 @@
-# Sistem-Aset v0.2
-'Sistem Aset v0.2 ' is an Web-Based asset management system that can handle your asset data or record. 
+# Sistem-Aset v0.3
+'Sistem Aset v0.3 ' is an Web-Based asset management system that can handle your asset data or record. 
 
 Tutorial for setup 
 1. Clone/Download this repo to your local machine
@@ -42,7 +42,9 @@ Example syntax :
 
 Bug Fix
 --------
-- User cannot access directly to other page from URL if they are not log in first.
-- More easy & maintainable code structure 
+-
+Update
+-----------
+- Total Asset logo has been changed to "box" logo
 
 
