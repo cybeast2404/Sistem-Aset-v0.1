@@ -15,7 +15,7 @@
               <p>JUMLAH ASET</p>
             </div>
             <div class="icon">
-            	 <i class="ion ion-person-add"></i>
+            	 <i class="ion ion-ios-box"></i>
             </div>
 
           </div>
