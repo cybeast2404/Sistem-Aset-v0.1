@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\assets;
-use App\asset_items;
+use App\AssetItems;
 
 class pages_controller extends Controller
 {
@@ -39,7 +39,7 @@ class pages_controller extends Controller
           'costmonth' =>$cost,
           'costyear'  =>$costyear,
           'l_asset'   =>$l_asset,
-          'l_items'   =>$l_items, 
+          'l_items'   =>$l_items,
           ));
 
 		}
@@ -54,7 +54,7 @@ class pages_controller extends Controller
     	if(session('username')) {
 
     	return view('asset_category');
-    	
+
     	}
     	else
         {
@@ -66,13 +66,13 @@ class pages_controller extends Controller
     {
     	if(session('username')) {
 
-    	$query = DB::select('select * from category_assets');
+    	$query = DB::select('select * from CategoryAssets');
 		return view('asset_new',['query'=>$query]);
 
     	} else {
 
-    	return redirect('/');	
-    	
+    	return redirect('/');
+
     	}
 
     }
@@ -85,10 +85,10 @@ class pages_controller extends Controller
 	    return view('asset_item',['query'=>$query]);
     	} else {
 
-    	return redirect('/');		
-   
+    	return redirect('/');
+
     	}
-    }	
+    }
 
     public function admin_register()
     {
@@ -102,7 +102,7 @@ class pages_controller extends Controller
 
     	}
 
-    }	
+    }
 
 
 

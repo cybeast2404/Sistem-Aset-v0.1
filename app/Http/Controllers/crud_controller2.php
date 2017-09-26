@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\assets;
-use App\category_assets;
+use App\CategoryAssets;
 
 use DB;
 
@@ -27,7 +27,7 @@ class crud_controller2 extends Controller
 
     	$crud = assets::find($id);
 
-        $crud2 = category_assets::select('category_assets.name')
+        $crud2 = CategoryAssets::select('category_assets.name')
         ->join('assets','assets.category_id','=','category_assets.id')
         ->where('assets.id','=',$id)
         ->get();
@@ -37,14 +37,14 @@ class crud_controller2 extends Controller
 
     public function edit($id)
     {
-        
-        
+
+
         //extract all data based on id
     	$crud = assets::find($id);
         //list all category in asset forms
-        $crud2 = category_assets::get();
+        $crud2 = CategoryAssets::get();
         //current category name
-        $crud3 = category_assets::select('category_assets.name')
+        $crud3 = CategoryAssets::select('category_assets.name')
         ->join('assets','assets.category_id','=','category_assets.id')
         ->where('assets.id','=',$id)
         ->get();

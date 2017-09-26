@@ -20,18 +20,18 @@ class AssetItem extends Migration
 
             $table->increments('id');
             $table->integer('asset_id')->unsigned()->nullable(); //make a relationship with asset.id table.
-            $table->string('asset_no'); //fill in form 
+            $table->string('asset_no'); //fill in form
             $table->string('location'); //fill in form
             $table->string('date_purchase'); //fill in form as type=date
             $table->decimal('price',6,2); //fill in form
-            
-         
+
+
             $table->timestamps();
 
 
              $table->foreign('asset_id')->references('id')->on('assets');
         });
-        
+
     }
 
     /**

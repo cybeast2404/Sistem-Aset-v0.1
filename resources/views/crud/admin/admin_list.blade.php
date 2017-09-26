@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
 
- 
+
       <div class="container">
     <table class="table table-striped">
     <thead>
@@ -12,7 +12,7 @@
         <th>Bil</th>
         <th>Nombor staff</th>
         <th>Nama</th>
-    
+
 
         <th colspan="4"><center>Konfigurasi</center></th>
       </tr>
@@ -26,13 +26,13 @@
         <td>
          <input type='text' name='catid' value="{{$post['id']}}" hidden>
         </td>
-        <td><a href="{{action('crud_controller4@edit', $post['id']) }}"class="btn btn-warning">Edit</a> 	
+        <td><a href="{{action('ProfilesController@edit', $post['id']) }}"class="btn btn-warning">Edit</a>
         </td>
         <td>
-        <a href="{{action('crud_controller4@show', $post['id'])}}" class="btn btn-success">view</a>
+        <a href="{{action('ProfilesController@show', $post['id'])}}" class="btn btn-success">view</a>
       </td>
          <td>
-        <form action="{{action('crud_controller4@destroy', $post['id'])}}" method="post">
+        <form action="{{action('ProfilesController@destroy', $post['id'])}}" method="post">
             {{csrf_field()}}
             <input name="_method" type="hidden" value="DELETE">
             <button class="btn btn-danger" type="submit">Delete</button>

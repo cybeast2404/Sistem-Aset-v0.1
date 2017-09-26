@@ -8,9 +8,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Input;
 use App\users;
-use App\category_assets;
+use App\CategoryAssets;
 use App\assets;
-use App\asset_items;
+use App\AssetItems;
 
 
 class login_controller extends Controller

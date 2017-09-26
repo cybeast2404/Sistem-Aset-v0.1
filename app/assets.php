@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class assets extends Model
+class Assets extends Model
 {
-    
+
 
     protected $fillable = [
 
@@ -21,14 +21,14 @@ class assets extends Model
     ];
 
 
-	public function asset_items()
+	public function AssetItems()
 	{
-		return $this->hasMany(asset_items::class);
+		return $this->hasMany(AssetItems::class);
 	}
 
-    public function category_assets()
+    public function CategoryAssets()
     {
-        return $this->belongsToMany(category_assets::class);
+        return $this->belongsToMany(CategoryAssets::class);
     }
 
 

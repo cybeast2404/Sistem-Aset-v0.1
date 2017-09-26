@@ -46,10 +46,10 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Senarai<span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li></li>
-                  <li><a href="{{action('crud_controller1@index')}}">Senarai Aset item</a></li>
+                  <li><a href="{{action('AssetItemsController@index')}}">Senarai Aset item</a></li>
                 <li><a href="{{action('crud_controller2@index')}}">Senarai Aset</a></li>
-                <li><a href="{{action('crud_controller3@index')}}">Senarai aset kategori</a></li>
-                <li><a href="{{action('crud_controller4@index')}}">Senarai admin</a></li>
+                <li><a href="{{action('CategoryAssetsController@index')}}">Senarai aset kategori</a></li>
+                <li><a href="{{action('ProfilesController@index')}}">Senarai admin</a></li>
                   <li role="separator" class="divider"></li>
                 </ul>
               </li>
@@ -60,9 +60,9 @@
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-</nav>  
+</nav>
 
-<!--Error message will popup here-->    
+<!--Error message will popup here-->
 @extends('message')
 @section('message_text')
 
@@ -71,6 +71,6 @@
 @endsection
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src= "{{ URL::asset('css/SA_resources/js/bootstrap.min.js') }}" ></script>
-   
+
 </body>
 </html>
