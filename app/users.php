@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class users extends User
+class Users extends User
 {
     /**
      * The attributes that are mass assignable.
@@ -24,8 +24,8 @@ class users extends User
         'password', 'remember_token',
     ];
 
-    public function user_profiles()
+    public function UserProfiles()
     {
-     return $this->hasOne(user_profiles::class);
+     return $this->hasOne(UserProfiles::class);
     }
 }

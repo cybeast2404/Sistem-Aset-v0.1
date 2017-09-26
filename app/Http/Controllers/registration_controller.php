@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-//call model that want to make a request 
+//call model that want to make a request
 use App\users;
-use App\user_profiles;
-use App\category_assets;
+use App\UserProfiles;
+use App\CategoryAssets;
 use App\assets;
-use App\asset_items;
+use App\AssetItems;
 //
 
 use Illuminate\Http\Request;
@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 class registration_controller extends Controller
 {
-    
+
     public function __construct()
     {
 
@@ -39,8 +39,8 @@ class registration_controller extends Controller
     	$user_primary->username = $username;
     	$user_primary->password = $password;
         $user_primary->email    = $email;
-       
-        //from user_profiles model
+
+        //from UserProfiles model
         $staff_no = $request['staff_no'];
         $name     = $request['name'];
         $tel_no   = $request['tel_no'];
@@ -52,15 +52,15 @@ class registration_controller extends Controller
         $id_from_user = $user_primary->id;
 
         //key-in data in user_profile table
-    	$user_profile = new user_profiles();
+    	$user_profile = new UserProfiles();
 
     	$user_profile->user_id  = $id_from_user;
     	$user_profile->staff_no = $staff_no;
         $user_profile->name     = $name;
     	$user_profile->tel_no	= $tel_no;
-       
+
     	//save data through database
-    	
+
         $user_profile->save();
 
     	return redirect('/dashboard')->with('statement','succesfully registered!');
@@ -74,7 +74,7 @@ class registration_controller extends Controller
         $name           = $request['category_type'];
         $description    = $request['description'];
 
-        $category = new category_assets();
+        $category = new CategoryAssets();
         $category->name        = $name;
         $category->description = $description;
 
@@ -90,7 +90,7 @@ class registration_controller extends Controller
         $asset_name            = $request['asset_name'];
         $description           = $request['description'];
         $category_id           = $request['category_id'];
-        
+
 
         $asset = new assets();
 
@@ -112,9 +112,9 @@ class registration_controller extends Controller
         $location       = $request['location'];
         $price          = $request['price'];
         $date_purchase  = $request['date_purchase'];
-        
 
-        $asset_item = new asset_items();
+
+        $asset_item = new AssetItems();
         $asset_item->asset_id        = $asset_id;
         $asset_item->asset_no        = $asset_no;
         $asset_item->location        = $location;

@@ -23,7 +23,7 @@ class UserProfile extends Migration
             $table->string('staff_no'); //in form
             $table->string('name'); // in form
             $table->string('tel_no'); //in form
-          
+
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

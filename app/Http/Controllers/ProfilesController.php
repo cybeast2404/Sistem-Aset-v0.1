@@ -4,15 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\users;
-use App\user_profiles;
+use App\UserProfiles;
 
-class crud_controller4 extends Controller
+class ProfilesController extends Controller
 {
     //Admin controller
 
     public function index()
     {
-    $cruditems = user_profiles::paginate(8);
+    $cruditems = UserProfiles::paginate(8);
     return view('crud.admin.admin_list', compact('cruditems'));
     }
 
@@ -20,7 +20,7 @@ class crud_controller4 extends Controller
     {
     	$crud = users::find($id);
 
-    	$crud2 = user_profiles::select('user_profiles.staff_no','user_profiles.name','user_profiles.tel_no')
+    	$crud2 = UserProfiles::select('user_profiles.staff_no','user_profiles.name','user_profiles.tel_no')
     	->join('users','users.id','=','user_profiles.id')
     	->where('user_profiles.user_id','=',1)
     	->get();
@@ -32,8 +32,8 @@ class crud_controller4 extends Controller
     {
 
     	$crud = users::find($id);
-       
-        $crud2 = user_profiles::select('user_profiles.user_id','user_profiles.staff_no','user_profiles.name','user_profiles.tel_no')
+
+        $crud2 = UserProfiles::select('user_profiles.user_id','user_profiles.staff_no','user_profiles.name','user_profiles.tel_no')
         ->join('users','users.id','=','user_profiles.user_id')
         ->where('user_profiles.user_id','=',$id)
         ->get();
@@ -45,7 +45,7 @@ class crud_controller4 extends Controller
     public function update(Request $request,$id)
     {
 
-        $crud2 = user_profiles::find($id);
+        $crud2 = UserProfiles::find($id);
 
         $crud2->staff_no = $request->get('staff_no');
         $crud2->name     = $request->get('name');
@@ -60,7 +60,7 @@ class crud_controller4 extends Controller
 
     public function destroy($id)
     {
-      $crud1 = user_profiles::find($id);  
+      $crud1 = UserProfiles::find($id);
       $crud1->delete();
       $crud2 = users::find($id);
       $crud2->delete();

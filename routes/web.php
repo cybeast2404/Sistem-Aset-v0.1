@@ -5,11 +5,11 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Input;
 use App\users;
-use App\category_assets;
+use App\CategoryAssets;
 use App\assets;
-use App\asset_items;
+use App\AssetItems;
 
-//Middleware 
+//Middleware
 use App\Http\Middleware\CheckAdmin;
 
 /*
@@ -31,7 +31,7 @@ Route::get('/', function () {
 Route::get('/dashboard','pages_controller@dashboard');
 //asset category
 Route::get('dashboard/asset-category-registration','pages_controller@category_register');
-//asset registration 
+//asset registration
 Route::get('dashboard/asset-registration','pages_controller@asset_register');
 //asset item registration
 Route::get('dashboard/asset-item-registration','pages_controller@item_register');
@@ -62,16 +62,16 @@ Route::post('dashboard/register-new-asset','registration_controller@register_ass
 Route::post('dashboard/register-new-asset-item','registration_controller@register_asset_item')->middleware('CheckItem');
 
 //CRUD system(item list)
-Route::resource('dashboard/item', 'crud_controller1');
+Route::resource('dashboard/item', 'AssetItemsController');
 
 //CRUD system(asset)
 Route::resource('dashboard/asset', 'crud_controller2');
 
 //CRUD system(category)
-Route::resource('dashboard/category','crud_controller3');
+Route::resource('dashboard/category','CategoryAssetsController');
 
 //CRUD system(admin)
-Route::resource('dashboard/admin','crud_controller4');
+Route::resource('dashboard/admin','ProfilesController');
 
 //UPDATE system(password)
 Route::resource('dashboard/authentication','modification');

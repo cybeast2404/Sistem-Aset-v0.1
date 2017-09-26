@@ -22,16 +22,16 @@ class Asset extends Migration
             $table->integer('category_id')->unsigned()->nullable(); // make a relationship with category_asset.id table.
             $table->string('name'); //in form
             $table->string('description'); // in form
-            
+
             $table->timestamps();
 
              $table->foreign('category_id')->references('id')->on('category_assets');
 
 
-       
+
         });
 
-         
+
     }
 
     /**
