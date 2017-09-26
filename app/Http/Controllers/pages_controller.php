@@ -66,7 +66,7 @@ class pages_controller extends Controller
     {
     	if(session('username')) {
 
-    	$query = DB::select('select * from CategoryAssets');
+    	$query = DB::select('select * from category_assets');
 		return view('asset_new',['query'=>$query]);
 
     	} else {
