@@ -37,7 +37,7 @@ class pages_controller extends Controller
             return view('First_mainpage');
         } else {
           //This variable controlling the version digit.
-          $version = '0.3';
+          $version = '0.4';
 
           Session::put('version',$version);
 
