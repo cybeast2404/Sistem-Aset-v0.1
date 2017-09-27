@@ -62,6 +62,7 @@ class Kernel extends HttpKernel
         'CheckCategory'=>\App\Http\Middleware\CheckCategory::class,
         'CheckItem'=>\App\Http\Middleware\CheckItem::class,
         'CheckPassword'=>\App\Http\Middleware\CheckPassword::class,
+        'CheckFirstTimeRegister'=>\App\Http\Middleware\CheckFirstTimeRegister::class,
         
     ];
 }

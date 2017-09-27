@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\users;
 use App\user_profiles;
 
+//Administrator crud
+
 class crud_controller4 extends Controller
 {
     //Admin controller

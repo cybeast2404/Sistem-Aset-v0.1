@@ -6,8 +6,7 @@ use Illuminate\Http\Request;
 use App\assets;
 use App\category_assets;
 
-use DB;
-
+//asset CRUD
 class crud_controller2 extends Controller
 {
     //middleware
@@ -15,7 +14,7 @@ class crud_controller2 extends Controller
     {
         //$this->middleware('CheckAsset')->only('update');
     }
-    //asset list
+    
     public function index()
     {
     $cruditems = assets::paginate(8);

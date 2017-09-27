@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\category_assets;
-use DB;
+
+
+//Category asset CRUD
 
 class crud_controller3 extends Controller
 {
@@ -12,8 +14,7 @@ class crud_controller3 extends Controller
     {
     $cruditems = category_assets::paginate(8);
 
-    //$countrow = DB::table('category_assets');
-    //$count = $countrow->count();
+    
 
     return view('crud.category.category_list', compact('cruditems','count'));
     }

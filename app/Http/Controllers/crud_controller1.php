@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\asset_items;
 
-
+//asset item CRUD
 class crud_controller1 extends Controller
 {
      
 //extract all crud table attributes in array
-	//asset item list
+	
     public function index()
     {
     $cruditems = asset_items::paginate(8);
