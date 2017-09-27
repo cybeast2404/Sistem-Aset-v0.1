@@ -22,10 +22,22 @@ use App\Http\Middleware\CheckAdmin;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//URL Route
+//Login Route
+/*
 Route::get('/', function () {
     return view('login');
 });
+*/
+Route::get('/','pages_controller@login');
+
+//Register first time user
+Route::get('first-time-register','pages_controller@first_time_register');
+/*
+Route::get('first-time-register',function(){
+	return view('first_time');
+
+});
+*/
 
 //dashboard
 Route::get('/dashboard','pages_controller@dashboard');
@@ -49,17 +61,20 @@ Route::post('login','login_controller@login');
 //logout proccess
 Route::get('logout','login_controller@logout');
 
+//Admin first time registration process
+Route::post('first-time-register/process','registration_controller@first_time');
+
 //admin registration process
-Route::post('dashboard/register-process','registration_controller@register_admin')->middleware('CheckAdmin');
+Route::post('dashboard/register-process','registration_controller@register_admin');
 
 //category asset registration
-Route::post('dashboard/register-category','registration_controller@register_category_asset')->middleware('CheckCategory');
+Route::post('dashboard/register-category','registration_controller@register_category_asset');
 
 //new asset registration
-Route::post('dashboard/register-new-asset','registration_controller@register_asset_new')->middleware('CheckAsset');
+Route::post('dashboard/register-new-asset','registration_controller@register_asset_new');
 
 //new asset item registration
-Route::post('dashboard/register-new-asset-item','registration_controller@register_asset_item')->middleware('CheckItem');
+Route::post('dashboard/register-new-asset-item','registration_controller@register_asset_item');
 
 //CRUD system(item list)
 Route::resource('dashboard/item', 'crud_controller1');
