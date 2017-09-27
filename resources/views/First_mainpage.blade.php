@@ -23,52 +23,23 @@
         </div>
         
         </br>
-        @if(session('incorrect'))
- 
-      		<div class="alert alert-danger" role="alert" align="center">
- 			{{session('incorrect')}}
-			</div>
-      	</p>
-      	@elseif(session('statement'))
-      		<div class="alert alert-success" role="alert" align="center">
- 			{{session('statement')}}
-			</div>
-      	</p>
-
-      	@endif
-      	
+      
         <div class="panel panel-default" >
-            <div class="panel-heading">
-                <div class="panel-title text-center">Sistem Aset v{{Session::get('version')}} </div>
-            </div>     
-
+           
             <div class="panel-body" >
             	<div class="col-sm-12 controls">
 
 
             	</div>
-            <form name="form" action="{{ url('login')}}" class="form-horizontal" method="POST">
-                   
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input type="text" class="form-control" name="username" placeholder="Username">                                        
-                    </div>
-                    <br>
-
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input id="password" type="password" class="form-control" name="password" placeholder="Password">
-
-                         <input type="hidden" class="form-control" name="_token" value="{{ csrf_token() }}">
-                    </div>                                                                  
-                    <br>
-                    <div class="form-group">
+            <div align="center"><b>Selamat datang ke sistem Aset!</b></div>
+            <br>
+            <div align="center">Anda akan ke halaman pendaftaran admin dahulu sebelum menggunakan sistem ini. Sila tekan pada butang "Next" untuk ke halaman seterusnya. </div>
+            <br>
                         <!-- Button -->
-                        <div class="col-sm-12 controls">
+                        <div class="col-sm-7 controls">
 
-                        	 <button type="reset"  class="btn btn-primary pull-right"><i class="glyphicon glyphicon-repeat"></i>reset</button>  
 
-                            <button type="submit" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-log-in"></i> Log in</button> &nbsp;
+                            <a href="{{ url('first-time-register')}}"><button class="btn btn-primary pull-right"><i class="glyphicon glyphicon-log-in"></i>Next</button></a> &nbsp;
                                                           
                         </div>
                     </div>
