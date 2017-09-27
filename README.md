@@ -45,9 +45,9 @@ Bug Fix
 -
 Update
 -----------
--Implement the 'respective Model' Concept on the code. 
--Asset items model,table & data structure added on the system.
--Adding a new page for first time user to register for administrator
+- Implement the 'respective Model' Concept on the code. 
+- Asset items model,table & data structure added on the system.
+- Adding a new page for first time user to register for administrator
 
 
 
