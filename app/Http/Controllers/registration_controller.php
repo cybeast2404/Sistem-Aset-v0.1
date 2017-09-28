@@ -7,7 +7,7 @@ use App\users;
 use App\user_profiles;
 use App\category_assets;
 use App\assets;
-use App\asset_items;
+use App\asset_items;    //this class are not exist
 //
 
 use Illuminate\Http\Request;
